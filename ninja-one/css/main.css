@@ -5,6 +5,26 @@
    ========================================================================== */
 
 
+.center {text-align: center; margin-top:50px;}
+
+.swipe {
+  overflow: hidden;
+  visibility: hidden;
+  position: relative;
+}
+.swipe-wrap {
+  overflow: hidden;
+  position: relative;
+}
+.swipe-wrap > div {
+  float:left;
+  width:100%;
+  position: relative;
+}
+
+.progress {display: none;}
+
+.quote-wrapper {display: none;}
 
 
 

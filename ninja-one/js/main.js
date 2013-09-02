@@ -12,6 +12,9 @@ $('.getquotes').on('click', function(){
 	    quotesObj = resp;
 	    console.log(quotesObj);
 
+	    //Init progress bar
+	    loadingBar()
+	    
 	    //Place the qutes into the dom
 	    domify(quotesObj);
 	  },
@@ -21,6 +24,28 @@ $('.getquotes').on('click', function(){
 	});
 });
 
+/************************************
+*
+*	Event Listeners
+*
+************************************/
+
+$('.quote-next').on('click', function() {
+	window.mySwipe.next();
+})
+
+$('.quote-prev').on('click', function() {
+	window.mySwipe.prev()
+})
+
+
+
+/************************************
+*
+*	Functions
+*
+*************************************/
+
 var domify = function(quotesObject) {
 	var allquotes = quotesObject.quotes;
 	console.log(allquotes);
@@ -29,13 +54,29 @@ var domify = function(quotesObject) {
 		//Loop through and add each quote to the dom
 		console.log(allquotes[q].quote);
 
-		$('.quoteContainer').append('<div class="thequote">' + allquotes[q].quote + '</div>');
+		$('.swipe-wrap').append('<div class="thequote">' + allquotes[q].quote + '</div>');
 	}
 
 	//Now Fire the Rotator
-	rotateQuotes();
+	
 }
 
 function rotateQuotes() {
 	console.log('rotate the quotes')
+	window.mySwipe = Swipe(document.getElementById('mySwipe'));
 }
+
+function loadingBar() {
+    //Set the progress bar to 0 -> show it and make it 100 -> hide it
+    $('.progress-bar').css("width","0%").parent().slideDown(200, function() {
+    	$('.progress-bar').css("width","100%");
+	    window.setTimeout(function() {
+    		$('.landing').slideUp(400, function() {
+    			$('.quote-wrapper').fadeIn(function() {
+    				rotateQuotes();
+    			});
+    		});
+    	}, 800)
+    });
+}
+
