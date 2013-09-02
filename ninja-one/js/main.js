@@ -10,7 +10,7 @@ $('.getquotes').on('click', function(){
 	  success: function(resp) {
 	  	//Place quotes object into variable
 	    quotesObj = resp;
-	    console.log(quotesObj);
+	    //console.log(quotesObj);
 
 	    //Init progress bar
 	    loadingBar()
@@ -19,7 +19,7 @@ $('.getquotes').on('click', function(){
 	    domify(quotesObj);
 	  },
 	  error: function(req, status, err) {
-	    console.error("Something went wrong! Status: %s (%s)", status, err);
+	    //console.error("Something went wrong! Status: %s (%s)", status, err);
 	  }
 	});
 });
@@ -48,11 +48,11 @@ $('.quote-prev').on('click', function() {
 
 var domify = function(quotesObject) {
 	var allquotes = quotesObject.quotes;
-	console.log(allquotes);
+	//console.log(allquotes);
 
 	for (var q = 0; q < allquotes.length; q++){
 		//Loop through and add each quote to the dom
-		console.log(allquotes[q].quote);
+		//console.log(allquotes[q].quote);
 
 		$('.swipe-wrap').append('<div class="thequote">' + allquotes[q].quote + '</div>');
 	}
@@ -62,8 +62,11 @@ var domify = function(quotesObject) {
 }
 
 function rotateQuotes() {
-	console.log('rotate the quotes')
+	//console.log('rotate the quotes')
 	window.mySwipe = Swipe(document.getElementById('mySwipe'));
+	window.setTimeout( function() {
+		$('.swipe-wrap').slideDown(300);
+	}, 300)
 }
 
 function loadingBar() {
