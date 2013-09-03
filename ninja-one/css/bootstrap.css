@@ -6272,6 +6272,11 @@ td.visible-xs {
   td.visible-xs {
     display: table-cell !important;
   }
+
+ .thequote{line-height: 24px;
+            font-size: 16px;};
+
+
 }
 
 @media (min-width: 768px) and (max-width: 991px) {

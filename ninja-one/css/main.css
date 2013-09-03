@@ -6,6 +6,7 @@
 
 
 .center {text-align: center; margin-top:50px;}
+.centerbot {text-align: center;}
 
 .swipe {
   overflow: hidden;
@@ -25,9 +26,6 @@
 .progress {display: none;}
 
 .swipe-wrap {display: none;}
-
-
-
 
 
 
