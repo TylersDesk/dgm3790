@@ -4,7 +4,7 @@ tcode = {};
 var quotesObj;
 
 $('.getquotes').on('click', function(){
-	$.ajax("http://localhost:5984/quotes/a7b1223b55f3bc929be06343b100083a", {
+	$.ajax("http://blog.pirho.com:5984/quotes/0278c387a9147431df266d6d4d000c04", {
 	  type: "GET",
 	  dataType: "jsonp",
 	  success: function(resp) {
@@ -82,4 +82,3 @@ function loadingBar() {
     	}, 800)
     });
 }
-
