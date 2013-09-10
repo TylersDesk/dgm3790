@@ -5,18 +5,29 @@
    ========================================================================== */
 
 
+body {background-color:#F2F2F2}
 
+.jumbotron {background: #7FA644; color:#F2F2F2;}
 
+.center {text-align: center;}
 
+a {color:#6B6459;}
+a:hover {color:#6B6459;}
 
+.jsondisplay {overflow: scroll;}
 
+.img-circle {width: 200px;
+height: 200px;
+box-shadow: 2px 1px 12px #6F6F6F;
+border: 5px solid #efefef;
+}
 
+.video-container {display: none;}
 
+h5 {color:#7FA644;}
 
+.btn-warning {background-image: linear-gradient(to bottom,#6B6459 0,#8C857B 100%);border-color: #756F67;}
+.btn-warning:hover {border-color: #4A4641;}
+.btn-warning:active {background-image: linear-gradient(to bottom,#8C857B 0,#6B6459 100%);border-color: #756F67;}
 
-
-
-
-
-
-
+hr {border-top:1px dotted #4A4641;}
