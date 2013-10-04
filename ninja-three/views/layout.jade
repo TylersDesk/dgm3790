@@ -1,0 +1,24 @@
+doctype 5
+html(lang="en", ng-app="ninja-3")
+	head
+		link(rel="stylesheet",href="css/bootstrap.css")
+		link(rel="stylesheet", href="css/main.css")
+	body
+		nav.navbar.navbar-inverse(role="navigation")
+			a.navbar-brand(href="#") Ninja-Three
+			input.theinput(ng-model="theinput", placeholder="Ninja's type here...")
+			
+				
+
+		div(ng-view)
+			block mainContent
+
+		footer
+			p footer goes here
+
+		//Grab the Javascripts
+		script(src="js/lib/angular.min.js")
+		script(src="app/app.js")
+		script(src="app/controllers.js")
+		script(src="app/directives.js")
+		script(src="js/main.js")

@@ -36,7 +36,7 @@ $theButtons.on('click', function(e){
 function ajaxVideoInfo(videoNum, colNum) {
 	//Variaables
 	var returnedstuff,
-		url = "http://vimeo.com/api/v2/video/" + videoNum + ".json?callback=",
+		url = "http://vimeo.com/api/v2/video/" + videoNum + ".json",
 		jsonString;
 
 	$.ajax(url, {

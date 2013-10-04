@@ -82,3 +82,5 @@ function loadingBar() {
     	}, 800)
     });
 }
+
+window.loc
