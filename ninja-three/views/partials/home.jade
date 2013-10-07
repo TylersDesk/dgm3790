@@ -1,1 +1,20 @@
-div {{theinput}}
+h5.centerthis Look for asteroids with a minimum diameter of:
+h1.centerthis.asearch {{minOut}}km 
+div(ng-repeat="asteroid in asteroids", endRepeatFire)
+	div.well 
+		h2.pull-left {{asteroid.name}}
+		div.pull-right.right
+			small Class// 
+			h4 {{asteroid.class}}
+			small FirstObserved//
+			h4 {{asteroid.first_obs}}
+			small Diameter//
+			h4 {{asteroid.diameter}} km
+		div.clearfix 
+
+	div.centerthis
+		svg(width="510",height="510")
+			circle.my_circle(cx="255",cy="255",r="255",fill="green",data-toggle="tooltip", title="This represents Earth.")
+			circle.my_circle(cx="255", cy="255",r="70", fill="gray",data-toggle="tooltip", title="This represents the moon.")
+			circle.my_circle(cx="255", cy="255", r="{{(asteroid.diameter/25)/2}}", fill="purple", data-toggle="tooltip", title="This reperesents the asteroid.")
+	hr

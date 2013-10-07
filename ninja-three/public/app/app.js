@@ -1,24 +1,22 @@
 'use strict';
 
 /* App Module */
-
-angular.module('ninja-3', []).
-  config(['$routeProvider', function($routeProvider) {
+angular.module('ninjaThree', [
+  'ninjaThree.controllers',
+  'ninjaThree.directives'
+]).
+config(function($routeProvider,$locationProvider) {
   $routeProvider.
-  		when('/', {
-  	  		templateUrl: '/partials/home',
-  	  		controller: ninjaController
-  	  	}).
-      	when('/test', {
-      		templateUrl: '/partials/test',
-      		controller: ninjaController
-      	}).
-      	when('/fail', {
-      		templateUrl: '/404'
-      	}).
-      	otherwise({redirectTo: '/'});
-}]);
+		when('/', {
+  		templateUrl: '/partials/home',
+  		controller: 'ninjaController'
+  	}).
+  	otherwise({
+      redirectTo: '/'
+    });
 
+    $locationProvider.html5Mode(true);
+});
 
 //init app module and declare it's dependencies on other modules
 // angular.module('myapp', ['myapp.controllers'])

@@ -7,7 +7,6 @@ var express = require('express'),
 	routes = require('./routes'),
 	http = require('http'),
 	path = require('path');
-
 var app = express();
 
 // all environments
@@ -22,11 +21,13 @@ app.use(require('less-middleware')({ src: __dirname + '/public' }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(app.router);
 
-
 // development only
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
+
+
+
 
 // ***********
 // Route Stuff
@@ -35,7 +36,9 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index); 	// Default route for index <- Gets index.jade from routes/index.js. Remember this uses index.js because routes is defined with nothing after './routes'
 //app.get('/portfolio', routes.portfolio);
 app.get('/partials/:name', routes.partials);
-app.get('*', routes.index);
+app.get('/api*', routes.api);
+app.get('*', routes.redirect);
+
 
 // *****************
 // Create the server

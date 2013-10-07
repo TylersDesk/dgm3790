@@ -2,24 +2,24 @@
 
 /* Controllers */
 
-function ninjaController($scope, $http) {
-  $http.jsonp('http://web-app.usc.edu/ws/webcams/api/tommycam?callback=JSON_CALLBACK',
-    {
-        dataType: 'jsonp',
-        method: 'POST',
-        data: '',
-        headers: {
-            "Content-Type": "application/json"
-        }
-    }).success(function(data) {
-    //$scope.phones = data;
+angular.module('ninjaThree.controllers', []).
+
+controller('ninjaController', function($scope, $http) {
+
+  $(document).on('keyup', function() {
+    var tylerAPIUrl = '/api?min=' + $scope.minOut;
+    console.log(tylerAPIUrl);
+    $http.get(tylerAPIUrl).
+      success( function(data) {
+      $scope.asteroids = data;
       console.log(data);
-      $scope.badges = data.data.badges;
-      theData = data.data.badges;
-
+    
+    }).error( function(r,t,et){
+      console.log('lolumad?');
+      console.log(r);
+      console.log(t);
+      console.log(et);
+    });
+    console.log($scope.minOut);
   });
-
-  $scope.orderProp = 'age';
-}
-
-//PhoneListCtrl.$inject = ['$scope', '$http'];
+});
