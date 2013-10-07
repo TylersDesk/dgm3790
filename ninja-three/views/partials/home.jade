@@ -1,5 +1,12 @@
-h5.centerthis Look for asteroids with a minimum diameter of:
-h1.centerthis.asearch {{minOut}}km 
+div(ng-hide="!minOut")
+	h5.centerthis Look for asteroids with a minimum diameter of:
+	h1.centerthis.asearch {{minOut}}km
+
+div.centerthis(ng-hide="minOut")
+	h5.centerthis Welcome ninjas. Put a number, in kilometers, in the above input to query the astroid database.
+	h1.centerthis.asearch No number in the input.
+
+
 div(ng-repeat="asteroid in asteroids", endRepeatFire)
 	div.well 
 		h2.pull-left {{asteroid.name}}
